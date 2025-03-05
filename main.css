@@ -1,30 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lovely+Valentine+Sans&display=swap');
+/* Added Lovely Valentine Sans font */
 
 body {
-    background-color: #1b1b1b;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #b3d9ff;
+    /* Pastel blue background color */
+    font-family: 'Inter', sans-serif;
+    /* Set font to Lovely Valentine Sans */
+    margin: 0;
+    padding: 0;
 }
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
+    width: 10vw;
+    /* Reduced width of the sidebar */
+    background-color: #a0f3ce;
+    /* Pastel red background color for sidebar */
     backdrop-filter: blur(10px) saturate(200%) brightness(70%);
-    color: #fff;
     display: flex;
-    height: 7vw;
-    width: 100%;
+    flex-direction: column;
     align-items: center;
-    justify-content: left;
-    padding: 0 1%;
+    padding: 1vw;
+    /* Reduced padding */
+    box-shadow: 5px 0 10px rgba(53, 53, 53, 0.459);
+    border-radius: 0 1vw 1vw 1vw;
+    /* Top-left corner is not rounded, other corners are rounded */
     z-index: 5;
-    margin: auto;
+    height: auto;
+    /* Adjust the height based on content */
+    transform: translate(0, 0);
 }
 
 nav img {
-    height: 80%;
+    height: 6vw;
+    /* Reduced logo size */
     width: auto;
-    margin-right: 1%;
+    margin-bottom: 1vw;
     border-radius: 1vw;
     cursor: pointer;
     user-select: none;
@@ -32,16 +46,21 @@ nav img {
 }
 
 nav h1 {
-    font-size: 4vw;
+    font-size: 2.5vw;
+    /* Reduced font size */
     font-weight: 800;
-    margin-right: 1%;
+    color: #ff00ae;
+    margin-bottom: 1.5vw;
+    /* Reduced margin */
+    display: none;
+    /* Removed the "Math Games" text */
 }
 
 .content {
-    flex-direction: column;
-    align-items: left;
-    padding: 7vw;
-    padding-top: 0vw;
+    margin-left: 12vw;
+    /* Adjusted margin to prevent overlap with sidebar */
+    padding: 2vw;
+    padding-top: 7vw;
 }
 
 .content hr {
@@ -51,64 +70,24 @@ nav h1 {
     margin: 1vw 0;
 }
 
-.search {
-    display: flex;
-    user-select: none;
-    margin-top: 2.5vw;
-    margin-left: 1.2vw;
-}
- 
-.search input {
-    background-color: #222222;
-    border: none;
-    border-radius: 1vw 0 0 1vw;
-    color: #fff;
-    font-size: 1.5vw;
-    font-weight: 600;
-    padding: 0.8vw 1.5vw;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-    outline: none;
-}
- 
-.search input::placeholder {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.5vw;
-}
- 
-.search button {
-    background-color: #fff;
-    border: none;
-    border-radius: 0 1vw 1vw 0;
-    color:#222222;
-    font-size: 1.5vw;
-    font-weight: 600;
-    padding: 0.8vw 1vw;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-    transition: .3s all ease;
-}
- 
 #games {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: .6vw;
     padding-bottom: 5vw;
-
 }
- 
-#games img {    height: 15.6vw;
-    width: 15.6vw;
-    border-radius: 1vw;
+
+#games img {
+    height: 10.6vw;
+    width: 10.6vw;
+    border-radius: 2vw;
     margin: .5vw;
     cursor: pointer;
     user-select: none;
-    transition: transform .2s;
+    transition: transform 0.2s;
 }
- 
+
 #games img:hover {
     transform: scale(1.01);
 }
@@ -119,7 +98,7 @@ nav h1 {
     flex-wrap: wrap;
     justify-content: center;
     padding: 1vw;
-    margin:1%;
+    margin: 1%;
     margin-top: 6vw;
 }
 
@@ -140,7 +119,7 @@ nav h1 {
 .featured img {
     height: 12.5vw;
     width: 12.5vw;
-    border-radius: 1vw;
+    border-radius: 2vw;
     margin: .5vw;
     cursor: pointer;
     user-select: none;
@@ -152,10 +131,10 @@ nav h1 {
     filter: brightness(50%);
 }
 
-
 .featured .row img {
     height: 26vw;
     width: 26vw;
+    border-radius: 2vw;
 }
 
 .featured a {
@@ -164,22 +143,88 @@ nav h1 {
     color: #2c7ffc;
     text-decoration: none;
 }
-    
-    .featured .play-button {
+
+.featured .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.2s;
-    }
-    
-    .featured a:hover .play-button {
+}
+
+.featured a:hover .play-button {
     opacity: 1;
     pointer-events: none;
-    }
-    
-    .featured .play-button i {
+}
+
+.featured .play-button i {
     font-size: 5vw;
     text-shadow: 0 0 100px #2c7ffc;
+}
+
+/* Contact Us button inside the sidebar */
+.contact-btn-sidebar {
+    background-color: #66a8ff;
+    /* Blue color similar to image buttons */
+    color: white;
+    font-size: 1.5vw;
+    /* Similar font size as image buttons */
+    padding: 0.8vw 2vw;
+    /* Padding to match image button feel */
+    border-radius: 1vw;
+    /* Slightly rounded corners */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow */
+    margin-top: 2vw;
+    /* Space between logo/name and button */
+    font-family: 'Lovely Valentine Sans', sans-serif;
+    /* Apply the same font */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 90%;
+    /* Ensure button does not exceed sidebar width */
+    text-align: center;
+}
+
+.contact-btn-sidebar:hover {
+    background-color: #3b8eeb;
+    /* Slightly darker blue on hover */
+    transform: scale(1.05);
+    /* Slightly increase size on hover */
+}
+
+/* Ensures it opens a new tab with the email link */
+.contact-btn-sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    backdrop-filter: blur(10px);
+}
+
+.contact-btn-sidebar {
+    color: black;
+    /* Sets text color to black */
+    font-family: 'Inter', sans-serif;
+    /* Uses the same font */
+    font-weight: 700;
+    /* Matches boldness if needed */
+    .fading-line {
+        width: 80%;
+        height: 4px;
+        background: linear-gradient(to right, rgba(255, 105, 105, 0) 0%, rgba(255, 105, 105, 1) 50%, rgba(255, 105, 105, 0) 100%);
+        margin: -3px auto 20px auto; /* Move up */
+        border-radius: 2px;
     }
+
+}
+@media (max-width: 768px) {
+    iframe {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
